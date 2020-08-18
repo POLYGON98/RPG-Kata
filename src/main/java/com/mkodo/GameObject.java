@@ -14,13 +14,17 @@ public abstract class GameObject {
         return health;
     }
 
-    public boolean isAlive() {
-        return alive;
-    }
-
     public void receiveDamage(int damageReceived) {
         int healthAfterDamage = health - damageReceived;
         health = healthAfterDamage < 0 ? 0 : healthAfterDamage;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public boolean isAlive() {
+        return alive;
     }
 
     public void die() {
@@ -33,9 +37,5 @@ public abstract class GameObject {
 
     public void setDistance(int distanceAmount) {
         this.distance = distanceAmount;
-    }
-
-    public int getLevel() {
-        return level;
     }
 }

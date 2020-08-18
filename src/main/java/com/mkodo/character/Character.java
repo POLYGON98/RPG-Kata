@@ -17,6 +17,8 @@ public abstract class Character extends GameObject {
         this.damageAmount = damageAmount;
     }
 
+    public abstract int getRange();
+
     public int getDamageAmount() {
         return damageAmount;
     }
@@ -25,7 +27,13 @@ public abstract class Character extends GameObject {
         this.health = getHealth() + addedHealth > 1000 ? 1000 : getHealth() + addedHealth;
     }
 
-    public abstract int getRange();
+    public void addFaction(Faction faction) {
+        factions.add(faction);
+    }
+
+    public void removeFaction(Faction faction) {
+        factions.remove(faction);
+    }
 
     public boolean isAlly(GameObject targetCharacter) {
         for (Faction faction :factions) {
@@ -33,13 +41,5 @@ public abstract class Character extends GameObject {
                 return true;
         }
         return false;
-    }
-
-    public void addFaction(Faction faction) {
-        factions.add(faction);
-    }
-
-    public void removeFaction(Faction faction) {
-        factions.remove(faction);
     }
 }

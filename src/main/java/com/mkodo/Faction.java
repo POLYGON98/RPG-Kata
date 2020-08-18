@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Faction {
-    private String name;
-    private List<Character> members = new ArrayList<Character>();
+    private final String name;
+    private final List<Character> members = new ArrayList();
 
     public Faction(String name) {
         this.name = name;
